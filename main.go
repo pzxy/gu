@@ -47,7 +47,6 @@ func handleIpV4(ip string) {
 	wg := &sync.WaitGroup{}
 	for i := 2; i < 255; i++ {
 		ip := ipBase + strconv.Itoa(i)
-		fmt.Println(ip)
 		wg.Add(1)
 		go func() {
 			if msg, err := exist(ip + ":" + *port); err == nil {
